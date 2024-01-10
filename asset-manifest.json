@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/wellingtonengps/portfolio/static/css/main.f855e6bc.css",
+    "main.js": "/wellingtonengps/portfolio/static/js/main.677eba14.js",
+    "static/js/787.7da95b79.chunk.js": "/wellingtonengps/portfolio/static/js/787.7da95b79.chunk.js",
+    "static/media/picture.png": "/wellingtonengps/portfolio/static/media/picture.2282442fba6b30b7930c.png",
+    "index.html": "/wellingtonengps/portfolio/index.html",
+    "main.f855e6bc.css.map": "/wellingtonengps/portfolio/static/css/main.f855e6bc.css.map",
+    "main.677eba14.js.map": "/wellingtonengps/portfolio/static/js/main.677eba14.js.map",
+    "787.7da95b79.chunk.js.map": "/wellingtonengps/portfolio/static/js/787.7da95b79.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f855e6bc.css",
+    "static/js/main.677eba14.js"
+  ]
+}
