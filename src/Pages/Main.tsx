@@ -1,4 +1,4 @@
-import React, {useRef} from 'react';
+import React, {useRef, useState} from 'react';
 import picture from '../picture.png';
 import '../App.css';
 import styled from "styled-components";
@@ -7,8 +7,10 @@ import { FaLinkedin } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 import { FaBehance } from "react-icons/fa";
 import { FaDribbble } from "react-icons/fa";
+import { GiHamburgerMenu } from "react-icons/gi";
 
 import IconLink from "../Components/IconLink";
+import SideBar from "../Components/SideBar";
 
 const Title = styled.p`
     color: whitesmoke;
@@ -66,12 +68,23 @@ const Section = styled.section`
     color: white;
 `
 
+const SideBarIcon = styled.div`
+    position: fixed;
+    cursor: pointer;
+    top: 40px;
+    right: 50px;
+`
+
 function Main() {
 
     const resumoRef = useRef<HTMLLinkElement>(null)
     const projetosRef = useRef<HTMLLinkElement>(null)
     const mainRef = useRef<HTMLLinkElement>(null)
     const contatoRef = useRef<HTMLLinkElement>(null)
+
+    const [sideBar, setSideBar] = useState(false)
+
+    const showSideBar = () => setSideBar(!sideBar)
 
     const scrollParaResumo = () => {
         if (resumoRef.current) {
@@ -93,7 +106,10 @@ function Main() {
 
     return (
     <div className="App">
-
+            <SideBarIcon>
+                <GiHamburgerMenu onClick={showSideBar} color={"#FFFFFF"} size={30}/>
+            </SideBarIcon>
+            {sideBar && <SideBar active={setSideBar}/>}
           <section ref={mainRef}>
               <Header>
               <img src={picture} className="picture" alt="picture" height={200}/>
