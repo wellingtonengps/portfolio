@@ -27,8 +27,8 @@ const Subtitle = styled.p`
 `
 
 const Header = styled.header`  
-  //background-color: #282c34;
-    background-color: indianred;
+  background-color: #282c34;
+    //background-color: indianred;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -48,23 +48,22 @@ const WrapperLinks = styled.div`
 const WrapperSections = styled.div`
     display: flex;
     flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
-    
-    a {
-        margin-left: 40px;
-    }
+    align-items: flex-end;
+    justify-content: space-between;
+    position: absolute;
+    bottom: 60px;
+    gap: 40px;
 `
 
 const Section = styled.section`
     background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
 `
 
 function Main() {
@@ -123,6 +122,9 @@ function Main() {
           <Section ref={projetosRef}>
               <Title>Projetos</Title>
           </Section>
+        <Section ref={contatoRef}>
+            <Title>Contato</Title>
+        </Section>
 
     </div>
     );
