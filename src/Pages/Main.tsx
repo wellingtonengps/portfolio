@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useRef} from 'react';
 import picture from '../picture.png';
 import '../App.css';
 import styled from "styled-components";
@@ -27,7 +27,8 @@ const Subtitle = styled.p`
 `
 
 const Header = styled.header`  
-  background-color: #282c34;
+  //background-color: #282c34;
+    background-color: indianred;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -44,29 +45,87 @@ const WrapperLinks = styled.div`
     justify-content: space-around;
 `
 
+const WrapperSections = styled.div`
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    
+    a {
+        margin-left: 40px;
+    }
+`
+
+const Section = styled.section`
+    background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+`
+
 function Main() {
 
-    const handleButtonClick = () => {
-        console.log('Button clicked!');
-        // Add your button click logic here
+    const resumoRef = useRef<HTMLLinkElement>(null)
+    const projetosRef = useRef<HTMLLinkElement>(null)
+    const mainRef = useRef<HTMLLinkElement>(null)
+    const contatoRef = useRef<HTMLLinkElement>(null)
+
+    const scrollParaResumo = () => {
+        if (resumoRef.current) {
+            resumoRef.current.scrollIntoView({ behavior: 'smooth' });
+        }
     };
 
+    const scrollParaProjetos = () => {
+        if (projetosRef.current) {
+            projetosRef.current.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
 
-  return (
+    const scrollParaContato = () => {
+        if (contatoRef.current) {
+            contatoRef.current.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
+
+    return (
     <div className="App">
-      <Header>
-        <img src={picture} className="picture" alt="picture" height={200}/>
-        <Title>Wellington P. Silva</Title>
-        <Subtitle>Dev & Design</Subtitle>
-          <WrapperLinks>
-              <IconLink icon={FaLinkedin} href="https://www.linkedin.com/in/wellingtonengps/" target="" rel="noopener noreferrer" />
-              <IconLink icon={FaGithub} href="https://github.com/wellingtonengps" target="" rel="noopener noreferrer" />
-              <IconLink icon={FaBehance} href="https://www.behance.net/wellingpereira18" target="" rel="noopener noreferrer" />
-              <IconLink icon={FaDribbble} href="https://dribbble.com/wellingtonengps" target="" rel="noopener noreferrer" />
-          </WrapperLinks>
-      </Header>
+
+          <section ref={mainRef}>
+              <Header>
+              <img src={picture} className="picture" alt="picture" height={200}/>
+              <Title>Wellington P. Silva</Title>
+              <Subtitle>Dev & Design</Subtitle>
+              <WrapperLinks>
+                  <IconLink icon={FaLinkedin} href="https://www.linkedin.com/in/wellingtonengps/" target=""
+                            rel="noopener noreferrer"/>
+                  <IconLink icon={FaGithub} href="https://github.com/wellingtonengps" target=""
+                            rel="noopener noreferrer"/>
+                  <IconLink icon={FaBehance} href="https://www.behance.net/wellingpereira18" target=""
+                            rel="noopener noreferrer"/>
+                  <IconLink icon={FaDribbble} href="https://dribbble.com/wellingtonengps" target=""
+                            rel="noopener noreferrer"/>
+              </WrapperLinks>
+                  <WrapperSections>
+                      <a onClick={scrollParaResumo}>Resumo</a>
+                      <a onClick={scrollParaProjetos}>Projetos</a>
+                      <a onClick={scrollParaContato}>Contato</a>
+                  </WrapperSections>
+              </Header>
+          </section>
+        <Section ref={resumoRef}>
+              <Title>Resumo</Title>
+          </Section>
+          <Section ref={projetosRef}>
+              <Title>Projetos</Title>
+          </Section>
+
     </div>
-  );
+    );
 }
 
 export default Main;
