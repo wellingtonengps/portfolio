@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from "styled-components";
+import {Link} from "react-router-dom";
 
 const Container = styled.div`
   display: flex;
@@ -21,9 +22,9 @@ const Container = styled.div`
   }
 `;
 // @ts-ignore
-const SidebarItem = ({ Icon, Text }) => {
+const SidebarItem = ({ Icon, Text, Ref }) => {
     return (
-        <Container>
+        <Container onClick={() => Ref.current.scrollIntoView({ behavior: 'smooth' })}>
             <Icon />
             {Text}
         </Container>

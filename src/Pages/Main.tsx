@@ -3,7 +3,7 @@ import picture from '../picture.png';
 import '../App.css';
 import styled from "styled-components";
 
-import { FaLinkedin } from "react-icons/fa";
+import {FaHome, FaLinkedin} from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 import { FaBehance } from "react-icons/fa";
 import { FaDribbble } from "react-icons/fa";
@@ -11,6 +11,7 @@ import { GiHamburgerMenu } from "react-icons/gi";
 
 import IconLink from "../Components/IconLink";
 import SideBar from "../Components/SideBar";
+import SideBarItem from "../Components/SideBarItem";
 
 const Title = styled.p`
     color: whitesmoke;
@@ -109,7 +110,9 @@ function Main() {
             <SideBarIcon>
                 <GiHamburgerMenu onClick={showSideBar} color={"#FFFFFF"} size={30}/>
             </SideBarIcon>
-            {sideBar && <SideBar active={setSideBar}/>}
+            {sideBar && <SideBar active={setSideBar}>
+                <SideBarItem Icon={FaHome} Text="Home" Ref={contatoRef}/>
+            </SideBar>}
           <section ref={mainRef}>
               <Header>
               <img src={picture} className="picture" alt="picture" height={200}/>

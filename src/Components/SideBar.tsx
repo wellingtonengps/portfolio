@@ -45,7 +45,7 @@ const Content = styled.div`
 `;
 
 // @ts-ignore
-const SideBar = ({active}) => {
+const SideBar = ({children, active}) => {
 
     const closeSideBar = () => {
         active(false)
@@ -55,7 +55,7 @@ const SideBar = ({active}) => {
         <Container sidebar={active}>
             <FaTimes onClick={closeSideBar} />
             <Content>
-                <SideBarItem Icon={FaHome} Text="Home" />
+                {children}
             </Content>
         </Container>
     );
