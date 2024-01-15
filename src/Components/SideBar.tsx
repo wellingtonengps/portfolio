@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import SideBarItem from "./SideBarItem";
-import { FaTimes } from "react-icons/fa";
-import { FaHome } from "react-icons/fa";
+import { IoMdClose } from "react-icons/io";
+
 
 interface ContainerProps {
     sidebar: boolean;
@@ -53,7 +53,7 @@ const SideBar = ({children, active}) => {
 
     return (
         <Container sidebar={active}>
-            <FaTimes onClick={closeSideBar} />
+            <IoMdClose onClick={closeSideBar}  color={"#FFFFFF"} size={30}/>
             <Content>
                 {children}
             </Content>

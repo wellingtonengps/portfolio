@@ -7,7 +7,12 @@ import {FaHome, FaLinkedin} from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 import { FaBehance } from "react-icons/fa";
 import { FaDribbble } from "react-icons/fa";
-import { GiHamburgerMenu } from "react-icons/gi";
+import { IoMdMenu } from "react-icons/io";
+import { RiContactsFill } from "react-icons/ri";
+import { RiFolder5Fill } from "react-icons/ri";
+import { RiAccountCircleFill } from "react-icons/ri";
+
+
 
 import IconLink from "../Components/IconLink";
 import SideBar from "../Components/SideBar";
@@ -56,6 +61,18 @@ const WrapperSections = styled.div`
     position: absolute;
     bottom: 60px;
     gap: 40px;
+  
+   a {
+     cursor: pointer;
+   }
+
+  a:hover {
+    color: #6080de;
+  }
+
+    @media only screen and (max-width: 768px) {
+      display: none;
+    }
 `
 
 const Section = styled.section`
@@ -74,6 +91,11 @@ const SideBarIcon = styled.div`
     cursor: pointer;
     top: 40px;
     right: 50px;
+  
+    @media only screen and (min-width: 768px) {
+        display: none;
+    }
+  
 `
 
 function Main() {
@@ -108,10 +130,12 @@ function Main() {
     return (
     <div className="App">
             <SideBarIcon>
-                <GiHamburgerMenu onClick={showSideBar} color={"#FFFFFF"} size={30}/>
+                <IoMdMenu onClick={showSideBar} color={"#FFFFFF"} size={30}/>
             </SideBarIcon>
             {sideBar && <SideBar active={setSideBar}>
-                <SideBarItem Icon={FaHome} Text="Home" Ref={contatoRef}/>
+                <SideBarItem Icon={RiAccountCircleFill} Text="Resumo" Ref={resumoRef}/>
+                <SideBarItem Icon={RiFolder5Fill} Text="Projetos" Ref={projetosRef}/>
+                <SideBarItem Icon={RiContactsFill} Text="Contato" Ref={contatoRef}/>
             </SideBar>}
           <section ref={mainRef}>
               <Header>
