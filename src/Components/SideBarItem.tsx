@@ -17,7 +17,7 @@ const Container = styled.div`
   }
 
   &:hover {
-    background-color: black;
+    color: #6080de;
   }
 `;
 // @ts-ignore

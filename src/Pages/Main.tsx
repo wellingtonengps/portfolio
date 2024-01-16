@@ -84,6 +84,10 @@ const Section = styled.section`
     justify-content: center;
     font-size: calc(10px + 2vmin);
     color: white;
+    padding: 0 60px 0 60px;
+
+    text-align: justify;
+    hyphens: auto;
 `
 
 const SideBarIcon = styled.div`
@@ -130,7 +134,7 @@ function Main() {
     return (
     <div className="App">
             <SideBarIcon>
-                <IoMdMenu onClick={showSideBar} color={"#FFFFFF"} size={30}/>
+                <IoMdMenu onClick={showSideBar} color={"#6080de"} size={30}/>
             </SideBarIcon>
             {sideBar && <SideBar active={setSideBar}>
                 <SideBarItem Icon={RiAccountCircleFill} Text="Resumo" Ref={resumoRef}/>
@@ -161,6 +165,7 @@ function Main() {
           </section>
         <Section ref={resumoRef}>
               <Title>Resumo</Title>
+            <p>Wellington Pereira Silva é um dedicado estudante de Ciência da Computação, atualmente desempenhando o papel de estagiário de suporte em TI no Hospital Unimed Juiz de Fora. Além de sua atuação nessa área, ele se destaca como desenvolvedor Web e mobile, demonstrando habilidades que transcendem o nível comum de um estagiário, aproximando-se de uma senioridade júnior. Sua expertise abrange não apenas a programação, mas também a área de UX/UI, onde exibe um interesse entusiasmado. Wellington tem uma notável facilidade para desenvolver usabilidade e interfaces, evidenciando sua paixão pela criação de experiências digitais intuitivas e agradáveis.</p>
           </Section>
           <Section ref={projetosRef}>
               <Title>Projetos</Title>

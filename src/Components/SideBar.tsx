@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import SideBarItem from "./SideBarItem";
+//import SideBarItem from "./SideBarItem";
 import { IoMdClose } from "react-icons/io";
 
 
@@ -50,6 +50,7 @@ const SideBar = ({children, active}) => {
     const closeSideBar = () => {
         active(false)
     }
+
 
     return (
         <Container sidebar={active}>
